@@ -96,7 +96,7 @@ function identity<Type>(arg: Type): Type {
     return arg;
 }
 ```
-# Utilty 추후 추가 공부 필요_ 자주 쓰일만한 것 먼저!
+# Utility 추후 추가 공부 필요_ 자주 쓰일만한 것 먼저!
 https://www.typescriptlang.org/docs/handbook/utility-types.html   
 제네릭하고 익숙해지면 더 보기
 ### Awaited<Type>
@@ -104,7 +104,6 @@ https://www.typescriptlang.org/docs/handbook/utility-types.html
 type A = Awaited<Promise<string>>; // type A = string
 // type A는 스트링으로 잡힘. 프로미스에 담긴 스트링을 스트링으로 지정하고싶을 경우 사용
 ```
-
 
 ### Record<Keys, Type>
 Keys속성 키가 이고 속성 값이 인 객체 유형을 구성
@@ -122,16 +121,40 @@ const cats: Record<CatName, CatInfo> = {
   mordred: { age: 16, breed: "British Shorthair" },
 };
 ```
-
-### Partial<Type>
 ### Pick<Type, Keys>
-### Omit<Type, Keys>
+기존 타입에서 필요한 타입만 추출해서 새로운 타입
+```
+type User = {
+    age: number;
+    gender: string;
+    country: string;
+    city: string
+};
+// type Demographic = { age: number: gender: string; };
+type Demographic = Pick<User, 'age'|'gender'>;
+```
+### ReturnType<T>
+함수의 반환 타입을 복제하는 대신 사용
+```
+function createCircle() {
+    return {
+        kind: 'circle' as const,
+        radius: 1.0
+    }
+}
+// circle: { kind: 'circle'; radius: number }
+function transformCircle(circle: ReturnType<typeof createCircle>) {
+    ...
+}
+```
 
+### Omit<Type, Keys>
+### Partial<Type>
 
 # 더 좋은 타입스크립트 프로그래머로 만드는 11가지 팁
 https://velog.io/@lky5697/11-tips-that-help-you-become-a-better-typescript-programmer
 
-## 3. 옵셔널 필드 대신 구분된 유니온 사용
+## 옵셔널 필드 대신 구분된 유니온 사용
 before
 ```
 type Shape = {
@@ -198,7 +221,7 @@ function isRect(shape: Shape): shape is Rect {
 const circles = myShapes.filter(isCircle);
 ```
 
-## as const와 satisfies를 통해 추론된 타입을 구체적이도록 제어
+## as const
 as const 는 가장 구체적인 타입으로 범위를 좁힘.
 ```
 let a = [1, 2]; // typed: number[]
@@ -211,4 +234,6 @@ let circle = { kind: 'circle' as const, radius: 1.0 };
 let shape: { kind: 'circle' | 'rect' } = circle;
 ```
 
-satisfies는 추후 한번 더 보고 정리.
+# 추가 공부 키워드  
+infer   
+satisfies   
