@@ -98,6 +98,7 @@ github ignore 프로젝트의 node 복붙 추천.
 npm i -D typescript
 npx tsc --init
 ```
+tsconfig.json 생성됨
 ```
 // tsconfig.json에 추가
 jsx:  'react-jsx'
@@ -149,6 +150,23 @@ touch .eslintignore
 /node_modules/
 /dist/
 /.parcel-cache/ 
+```
+### eslint 자동 fix _ vsc 기본셋팅
+```
+mkdir .vscode
+touch .vscode/settings.json 
+```
+```
+// .vscode/settings.json에 추가
+{
+    "editor.rulers": [
+        80
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "trailing-spaces.trimOnSave": true
+}
 ```
 
 npx eslint . // 하면 현재폴더 그아래에있는것들검사함        
@@ -202,7 +220,7 @@ check하면 컴파일하면 원래 자바스크립트 파일이 만들어지는�
 
 ```
 <!DOCTYPE html>
-<html land='ko'>
+<html lang='ko'>
   <head>
     <meta charset='UTF-8'>
     <title>React</title>
@@ -219,19 +237,25 @@ check하면 컴파일하면 원래 자바스크립트 파일이 만들어지는�
 
 ```
 // main.tsx
-import ReactDom from "react-dom/client";
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-const element = document.getElementById('root')
+function main() {
+	const element = document.getElementById('root');
 
-ReactDOM.createRoot(element)
+	if (!element) {
+		return;
+	}
 
-if (element) { // null 일수있기에
-  const root = ReactDOM.createRoot(element);
-  root.render(<p>Hello!</p>)
+	const root = ReactDOM.createRoot(element);
+
+	root.render(<App />);
 }
+
+main();
 ```
 
-import react from 'react' eslint 안잡히게
+### import react from 'react' ESLint 안잡히게
 ```
 //.eslintrc.js에서 extends에 추가
 'plugin:react/jsx-runtime'
