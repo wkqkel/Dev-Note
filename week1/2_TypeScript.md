@@ -10,7 +10,8 @@
 # 1. 용어정리
 
 ## REPL
-    "REPL"이란 Read-Eval-Print-Loop의 약자로 컴파일 과정 없이 즉석에서 코드를 입력해 결과를 바로 알 수 있는 방식을 말함. 개발 시에 코드를 즉시 테스트함으로써 디버깅을 할 수 있음.    
+    "REPL"이란 Read-Eval-Print-Loop의 약자로 컴파일 과정 없이 즉석에서 코드를 입력해 결과를 바로 알 수 있는 방식을 말함.  
+    개발 시에 코드를 즉시 테스트함으로써 디버깅을 할 수 있음.    
     npx ts-node 를 사용하여 repl환경을 사용할 수 있음.
 
 ## TypeScript
@@ -106,7 +107,7 @@ type A = Awaited<Promise<string>>; // type A = string
 ```
 
 ### Record<Keys, Type>
-Keys속성 키가 이고 속성 값이 인 객체 유형을 구성
+Keys가 key가 되고, Type이 value가 되는 객체 타입
 ```
 interface CatInfo {
   age: number;
@@ -133,6 +134,25 @@ type User = {
 // type Demographic = { age: number: gender: string; };
 type Demographic = Pick<User, 'age'|'gender'>;
 ```
+
+### Omit<Type, Keys>
+기존 타입에서 특정 타입을 뺀 새로운 타입
+```
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+  createdAt: number;
+}
+
+type TodoInfo = Omit<Todo, "completed" | "createdAt">;
+ 
+const todoInfo: TodoInfo = {
+  title: "Pick up kids",
+  description: "Kindergarten closes at 5pm",
+};
+```
+
 ### ReturnType<T>
 함수의 반환 타입을 복제하는 대신 사용
 ```
@@ -148,8 +168,21 @@ function transformCircle(circle: ReturnType<typeof createCircle>) {
 }
 ```
 
-### Omit<Type, Keys>
+
 ### Partial<Type>
+특정 타입의 부분 집합을 만족하는 타입을 정의
+모튼 프로퍼티가 옵셔널로 들어간 것
+```
+interface Address {
+  email: string;
+  address: string;
+}
+
+type MyEmail = Partial<Address>;
+const me: MyEmail = {}; // 가능
+const you: MyEmail = { email: "noh5524@gmail.com" }; // 가능
+const all: MyEmail = { email: "noh5524@gmail.com", address: "secho" }; // 가능
+```
 
 # 더 좋은 타입스크립트 프로그래머로 만드는 11가지 팁
 https://velog.io/@lky5697/11-tips-that-help-you-become-a-better-typescript-programmer
@@ -234,6 +267,6 @@ let circle = { kind: 'circle' as const, radius: 1.0 };
 let shape: { kind: 'circle' | 'rect' } = circle;
 ```
 
-# 추가 공부 키워드  
+# 추가공부하면 좋을 사항 
 infer   
 satisfies   

@@ -46,8 +46,8 @@ ESC                 // ESC를 눌러서 noaml 모드 진입
     'package.json'은 project에 대한 정보, 개발과 관련된 모듈 정보(모듈) 등이 포함되어 있는 명세.
       'dependencies'는 프로그램을 실행시키위해 필요한 모듈과 버전
       'devDependencies'는 개발환경에서 필요한 모듈.
-      'scripts'는 npm으로 실행시킬 수 있는 명령어를 정의할 수 있다. npm run [이름]으로 실행
-    'package-lock.json'은 파일이 생성되는 시점의 의존성 트리에 대한 정확한 (버전)정보를 가지고 있음. npm을 사용해서 node_modules 트리나 package.json 파일을 수정하게 되면 자동으로 생성.
+      'scripts'는 npm으로 실행시킬 수 있는 명령어를 정의할 수 있다. npm run [명령어]로 실행   
+    'package-lock.json'은 파일이 생성되는 시점의 의존성 트리에 대한 정확한 (버전)정보를 가지고 있음. npm을 사용해서 node_modules 트리나 package.json 파일을 수정하게 되면 자동으로 생성.    
     => package.json에는 version range, package.lock.json에는 정확한 version이 들어가는데, 이러한 이유는 크고 작은 패키지들의 릴리즈에 package.json을 항상 추적하고 수정해야하는 것을 version range를 사용함으로써 피함. 
     => package.json을 사용하여 node_modules를 생성하지않고 package-lock.json을 사용하여 node_modules를 생성
 
@@ -262,3 +262,8 @@ main();
 ```
 
 npm run lint 또는 npx eslint --fix // lint 실행
+
+
+# 추가공부하면 좋을 사항
+eslint나 prettier, tsconfig.json 항목들과 best practice
+터미널부터 혼자서 그냥 많이 셋팅해보기 => 많이 해봐야 셋팅에 대한 자신감 생김
