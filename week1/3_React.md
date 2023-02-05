@@ -74,7 +74,9 @@
 
     얕은비교? 불변성?
     바뀐부분만 하기때문에 인풋창의 상태값이 그대로 있을 수 있음.
+
 ## React Component
+
     함수들이 React 엘리먼트를 반환하는 것
     컴포넌트는 독립적이며, 재사용 가능하게 만든 부품 조각.
 
@@ -84,7 +86,9 @@
     'props'는 외부(부모)컴포넌트로 상속받은 데이터이며 불변값이다.
 
 ### IoC(Inversion of Control)
+
     제어의 역전
+
 ``
 // 🔴 React는 Layout이나 Article이 존재하는지 모릅니다.
 // 컴포넌트를 직접 호출합니다.
@@ -99,6 +103,7 @@ ReactDOM.render(
 <Layout><Article /></Layout>,
 domContainer
 )
+
 ```
 
 
@@ -121,23 +126,25 @@ DOM환경에서 호스트객체는 일반적인 DOM노드.
 ### React 엘리먼트
 React 엘리먼트는 호스트 객체를 그릴 수 있는 일반적인 자바스크립트 객체
 ```
+
 // JSX는 아래 오브젝트를 만들기 위한 편의구문입니다.
 // <dialog>
-//   <button className="blue" />
-//   <button className="red" />
+// <button className="blue" />
+// <button className="red" />
 // </dialog>
 {
-  type: 'dialog',
-  props: {
-    children: [{
-      type: 'button',
-      props: { className: 'blue' }
-    }, {
-      type: 'button',
-      props: { className: 'red' }
-    }]
-  }
+type: 'dialog',
+props: {
+children: [{
+type: 'button',
+props: { className: 'blue' }
+}, {
+type: 'button',
+props: { className: 'red' }
+}]
 }
+}
+
 ```
 
 ### 진입점
@@ -151,3 +158,4 @@ React가 컨테이너 호스트 객체 내부에 특정 React 엘리먼트 트�
 리액트 beta 공식문서 한 페이지씩 읽고 정리해보기.
 https://overreacted.io/ko/react-as-a-ui-runtime/ 다시 제대로 읽고 정리하기
 이상한 키워드에 꽂힌 다음 가볍게 찾지말고, 먼저 중요한 키워드부터 하나라도 제대로 정리해보자.
+```
