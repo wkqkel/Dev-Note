@@ -71,7 +71,7 @@ React의 세계에서 “virtual DOM”이라는 용어는 보통 사용자 인�
 
 Myth: React is “faster than DOM”. Reality: it helps create maintainable applications, and is _fast enough_ for most use cases.
 
-빠르기때문에 쓰는게 아니라 유지보수 가능하고 충분히 빠르
+빠르기때문에 쓰는게 아니라 유지보수 가능하고 충분히 빠르다
 
 > Reconciliation(재조정) 과정은 무엇인가?
 
