@@ -1,5 +1,7 @@
 # 1. 개발 환경
 
+## [MINE](https://github.com/wkqkel/frontend-survival-week01/tree/wkqkel)
+
 개발자는 개발 환경을 제대로 이해하고 능숙하게 설정할 줄 알아야 합니다.
 
 따라서 이번 주차에 나오는 내용을 제대로 학습하지 않으면 앞으로 계속 발목을 잡히게 됩니다.
