@@ -14,4 +14,4 @@
 
 - [Week3](/week3/0_intro.md)
   - [Component](/week3/1_Component.md)
-  - [State](/week3/1_State.md)
+  - [State](/week3/2_State.md)
