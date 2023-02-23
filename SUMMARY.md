@@ -23,8 +23,8 @@
 
 - [Week4]
 
-  - [Express](/week4/1_Express.md)
-  - [Fetch&Cors](/week4/2_Fetch&Cors.md)
+  - [Express](/week4/1.Express.md)
+  - [Fetch&Cors](/week4/2.Fetch&Cors.md)
   - [ReactHook](/week4/3.ReactHook.md)
   - [useRef & customHook](/week4/4.useRef%26CustomHook.md)
   - [useHook-ts](/week4/5.usehook-ts.md)
