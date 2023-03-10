@@ -35,3 +35,10 @@
   - [ReactTestingLibrary](/week5/2.ReactTestingLibrary.md)
   - [msw](/week5/3.msw.md)
   - [Playwright](/week5/4.Playwright.md)
+
+- Week6
+
+  - [externalStore](/week6/1.externalStore.md)
+  - [TSyringe](/week6/2.TSyringe.md)
+  - [Redux](/week6/3.Redux.md)
+  - [usestore-ts](/week6/4.usestore-ts.md)
